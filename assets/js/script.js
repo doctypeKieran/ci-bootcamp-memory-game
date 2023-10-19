@@ -27,6 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // And shuffle the colors array:
     shuffleArray(colors);
 
+    // Constant for correct matches display
+    const correctMatches = document.getElementById('correct-matches');
+
+    // Text content of correctMatches initialised to 0
+    correctMatches.textContent = `Total matches: ${matchedPairs}`;
+
     // Variable for the gameboard
     const gameBoard = document.getElementById('gameBoard');
 
@@ -61,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 firstCard.classList.add("matched");
                 secondCard.classList.add("matched");
                 matchedPairs++;
+                // Update text content for correctMatches
+                correctMatches.textContent = `Total matches: ${matchedPairs}`;
 
                 // Reset flippedCards array
                 flippedCards = [];
